@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="utf-8">
+      <meta name = "viewport" content ="width=device-width, intial-scale=1, shrink-to-fit=no">
+      <form action="/predict" method="POST">
+  <h1>Loan Prediction form</h1>
+
+<!-- Basic Info-->
+ <fieldset>
+    <legend>Basic Information</legend>
+    <label for="first name">First Name</label>
+    <input type="text" name="first-name" />
+    <br>
+    <br>
+    <label for="telephone">Contact Number</label>
+    <input type="text" name="telephone" />
+    <br/>
+  </fieldset>
+
+
+
+<!-- Applicant Personal Info-->
+ <fieldset>
+    <legend>Applicant Personal Information</legend>
+    <label for="Dependents">Dependents</label>
+    <input type="text" name="Dependents" />
+    <br>
+    <br>
+
+    <label for="Married">Marrieds</label>
+    <select name="Married" id="Married">
+    <option value="--">--</option>
+    <option value="1">yes</option>
+    <option value="0">No</option>
+    </select>
+    <br>
+    <br>
+
+    <label for="Gender">Gender</label>
+     <select name="Gender" id="Gender">
+    <option value="--">--</option>
+    <option value="0">Female</option>
+    <option value="1">Male</option>
+    </select>
+   
+ </fieldset>
+
+<!-- Applicant Details-->
+<fieldset>
+      <legend>Applicant Details</legend>
+      <label for="ApplicantIncome">ApplicantIncome(in 100's)</label>
+      <input type="text" name="ApplicantIncome" />
+      <br>
+      <br>
+
+      <label for="CoapplicantIncome">CoapplicantIncome(in 100's)</label>
+      <input type="text" name="CoapplicantIncome" />
+      <br>
+      <br>
+
+      <label for="LoanAmount">LoanAmount(in 1000's)</label>
+      <input type="text" name="LoanAmount" />
+      <br>
+      <br>
+
+      <label for="Loan_Amount_Term">Loan_Amount_Term</label>
+      <input type="text" name="Loan_Amount_Term" />
+      <br>
+      <br>
+
+      <label for="Credit_History">Credit_History</label>
+      <select name="Credit_History" id="Credit_History">
+        <option value="--">--</option>
+        <option value="1">1 </option>
+        <option value="0">0</option>
+        <select>
+
+      <br>
+      <br>
+
+      <label for="Education">Education</label>
+      <select name="Education" id="Education">
+      <option value="--">--</option>
+      <option value="0">Graduate</option>
+      <option value="1">Not Graduate</option>
+      </select>
+      <br>
+      <br>
+
+     <label for="Self_Employed">Self_Employed</label>
+     <select name="Self_Employed" id="Self_Employed">
+     <option value="--">--</option>
+     <option value="1">Yes</option>
+     <option value="0">No</option>
+     </select>
+     <br>
+     <br>
+
+    <label for="Property_Area">Property_Area</label>
+    <select name="Property_Area" id="Self_Employed">
+    <option value="--">--</option>
+    <option value="2">Urban</option>
+    <option value="0">Rural</option>
+    <option value="1">SemiUrban</option>
+    </select>
+    <br>
+    <br>
+</fieldset>
+ 
+
+<button class='btn btn-success'>Predict</button>
+</div class="row">
+           
+<!--<h2 class="text-warning">{{prediction}}</h2>-->
+{% if prediction %}
+<h3>Status 1:Loan Approved</h3>
+{% else %}
+<h3>Status 0:Loan Rejected</h3>
+{% endif %}
+
+</form>
+	
